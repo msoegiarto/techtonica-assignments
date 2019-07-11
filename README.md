@@ -1,2 +1,2 @@
 # techtonica-assignments
-Techtonica assignments
+Techtonica assignments.
