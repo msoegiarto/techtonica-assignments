@@ -1,0 +1,37 @@
+1. Exhibiting professionalism at Techtonica should not be different than in full-time job setting. In fact the former can be regarded as a training to adjust ourself on how to display professionalism on daily basis.
+
+2. I will notify the manager and team members as soon as I know that I will be late for work tommorow morning.
+
+3. I will speak with the team and try to get help or deadline extension.
+
+4. I can learn and retain information better when I manually write it down with pen and paper.
+
+5. Growth mindset is believing that talent can be cultivated through effort and making mistake is just a part of that effort.
+
+6. I am currently using Mac OS. Two other popular OS are Linux and Windows.
+
+7. Computers need operating systems because 
+   a. Computers (hardwares) operate on machine language. Operating systems are the middlemen between the machine language and higher language which most programms (softwares) today are written with.
+   b. Operating systems help managing the resources efficiently.
+
+8. If I stucked on a coding problem:
+   a. Googling
+   b. Asking for help
+
+9. I'm going to some meet-ups and ask for their linkedin.
+
+10. A body language where our body are leaning forward a little towards the other party indicates that we are giving attention to what they are saying.
+
+11. Saying "Would you please ..." instead of "You have to ..." will give the impression to the other parties that we asking them respectfully instead of ordering them around.
+
+12. Work together, be open and respectfull.
+
+13. The devices on the internet are physically connected to each other by using copper wires, fiber optic cables, and/or radio waves.
+
+14. Information is physically transmitted from device to device by having the information made into bits and send those bits using electricity, light or radio waves.
+
+15. One device find another it's trying to communicate with by using IP address. Every device connected to the internet has IP address and everytime a device send or request information, the device includes the IP addresses of itself and the other device.
+
+16. Devices on the internet communicate to each other by using protocols.
+
+17. Data can be sent reliably even if the network is unreliable by using Transmission Control Protocol (TCP). Data to be sent is devided into packets and each packets may be sent through different routes. If all the packets are received, TCP will send acknowledgement to the server and if not, server will resend the missing packets. TCP will also assembled the packets back into the data.  
