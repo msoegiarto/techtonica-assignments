@@ -51,7 +51,5 @@ const printMultiplicationTable = (input) => {
     }
     console.log(body);
   }
-
-  
 }
 printMultiplicationTable(4);
