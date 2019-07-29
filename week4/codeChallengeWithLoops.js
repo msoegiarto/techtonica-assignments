@@ -3,6 +3,7 @@ function vowelsAndConsonants(s) {
   var vowelsRegex = /a|e|i|o|u/;
   var vowels = '';
   var consonants = '';
+  var result;
   for (var i = 0; i < s.length; i++) {
     if (s[i].match(vowelsRegex)) {
       vowels += s[i];
@@ -10,7 +11,10 @@ function vowelsAndConsonants(s) {
       consonants += s[i];
     }
   }
-  console.log(vowels + consonants);
+  result = vowels + consonants;
+  for(var j = 0; j < result.length; j++){
+    console.log(result[j]);
+  }
 }
 vowelsAndConsonants('javascriptloops');
-vowelsAndConsonants('thequickbrownfoxjumpsoverthelazydog');
+// vowelsAndConsonants('thequickbrownfoxjumpsoverthelazydog');
