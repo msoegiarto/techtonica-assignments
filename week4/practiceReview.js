@@ -1,4 +1,4 @@
-// Challenge 1 -> runtime complexity O(n)
+// Challenge 1 -> runtime complexity O(1)
 const metersToInches = input => 39.3701 * input;
 // consolr.log('metersToInches 0 = ' + metersToInches(0));
 // consolr.log('metersToInches 1 = ' + metersToInches(1));
