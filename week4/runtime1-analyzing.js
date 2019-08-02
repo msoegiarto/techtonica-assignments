@@ -16,7 +16,8 @@ const mysteryFunction0 = function(array) {
   }
   return false;
 }
-// the function will try to match the value of each element in the array with a certain number (myFavoriteNum)
+// the function will go through each element of the input array
+// and try to match the value of the element with a certain number (myFavoriteNum)
 // runtime = O(n)
 
 
@@ -47,6 +48,7 @@ var mysteryFunction2 = function(n) {
 // if remainder not found on a number, that number will be added to the array `primes`
 // since i will be operated on j (j will be 2 until n), `factorFound` will always be true, `primes` length will always 0
 // runtime = O(n^2)
+
 
 const mysteryFunction3 = function(array) {
   myLength = array.length;
