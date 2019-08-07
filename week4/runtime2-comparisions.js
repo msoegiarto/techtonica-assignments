@@ -33,7 +33,7 @@ const findDuplicatesA = (array) => {
 // for each element of the array, the function will compare it to the next element
 // if duplicate is found, the value will be added into array `duplicated`
 // iteration will run `(n-1)+(n-2)+....+1` times, with n being the length of the input array (asuming array minimum has 2 elements)
-// runtime complexity = O(n) < O(n^2)
+// O(n^2)
 
 
 const findDuplicatesB = (array) => {
