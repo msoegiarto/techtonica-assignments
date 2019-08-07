@@ -1,0 +1,36 @@
+Namespace = a container for set of identifiers, functions, methods etc.
+It helps grouping our code logically and avoiding unexpected and expected collision.
+
+Hoisting = JavaScript's default behavior of moving declarations to the top.
+A variable can be used before it has been declared.
+
+Arity or function.prototype.length = the number of parameters expected by the function.
+
+Anonymous = function that doesn't have a name.
+Example: 
+(function(){ alert("Hello World!") })();
+(function(x, y) { return x + y })(1, 2); 
+
+Closure = a way to declare private variables and methods.
+Example:
+function Book(title) {
+    var title_; // instead of using `this`; `title_` become the private variable;
+
+    this.getTitle = function() {
+        return title_;
+    };
+
+    this.setTitle = function(title) {
+        title_ = title;
+    };
+
+    // should use the setter in case it does something else than just assign
+    this.setTitle(title);
+}
+
+Currying = a way of constructing functions that allows partial application of a function's arguments; a chain function.
+
+Pragma = a pre-processor directive, or like code metadata. 
+It's pragmatic information about how to interpret the code that follows.
+Example:
+'use strict';
