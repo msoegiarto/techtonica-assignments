@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <!--  The jQuery library is a single JavaScript file, and you reference it with the HTML.-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    .price-input {
+      display: inline-block;
+      list-style-type: none;
+    }
+
+    .price-input input {
+      border: 1px solid #ececec;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="event">
+    <!-- EVENTS GET INSERTED HERE -->
+  </ul>
+  <div>
+    <ul class="price-input">
+      <li>Min Price</li>
+      <li><input id="min-price-input" type="text" placeholder="0" /></li>
+    </ul>
+    <ul class="price-input">
+      <li>Max Price</li>
+      <li><input id="max-price-input" type="text" placeholder="1000" /></li>
+    </ul>
+    <ul class="price-input">
+      <li>&nbsp;</li>
+      <li><button id="search-ticket-button" type="button">Search Ticket</button></li>
+    </ul>
+  </div>
+  <div id="search-result"></div>
+</body>
+<script src="./event.js"></script>
+
+</html>
