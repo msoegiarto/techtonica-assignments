@@ -26,21 +26,21 @@ class Event {
 
     if (counter === 0) result = `No tickets available`;
 
-    return `${this.name} - ${this.description} - ${result}`;
+    return result;
   }
 
   getCheapestTicket() {
     let result = 0;
     for (let i = 0; i < this.availableTickets.length; i++) {
       const _ticket = this.availableTickets[i];
-      
+
       if (i === 0) {
         result = _ticket.ticketPrice;
       } else {
         result = result > _ticket.ticketPrice ? _ticket.ticketPrice : result;
       }
     }
-    return result === 0 ? 'Sold out' : `$${result}`;
+    return result;
   }
 }
 
@@ -73,63 +73,62 @@ event_array.push(event_obj1, event_obj2, event_obj3);
 // in order to check whether the elements are pushed, use console.log
 console.log(event_array);
 
-const displayEvent = (event, isSearch) => {
+const displayEvent = (isSearch, minPrice, maxPrice) => {
   let html = "";
   if (!isSearch) {
-    $.each(event, function (index, item) {
-      const _date = item.date.toString().substring(4,15);
-      if (item.getCheapestTicket() === 'Sold out') {
-        html += `<li>${item.name} - ${item.description} - ${_date} - ${item.getCheapestTicket()}</li>`;
+    $.each(event_array, function (index, item) {
+      if (item.getCheapestTicket() === 0) {
+        html += `<li>${item.name} - ${item.description} - ${getDateStr(item.date)} - Sold Out</li>`;
       } else {
-        html += `<li>${item.name} - ${item.description} - ${_date} - Starting from: ${item.getCheapestTicket()}</li>`;
+        html += `<li>${item.name} - ${item.description} - ${getDateStr(item.date)} - Starting from: $${item.getCheapestTicket()}</li>`;
       }
     });
   } else {
-    $.each(event, function (index, item) {
-      html += `<li>${item}</li>`;
+    $.each(event_array, function (index, item) {
+      html += `<li>${item.name} - ${item.description} - ${getDateStr(item.date)} - ${item.searchTickets(minPrice, maxPrice)}</li>`;
     });
   }
   // insert final html into #event...
   $("#event").html(html);
 }
 
+const getDateStr = _date => {
+  return _date.toString().substring(4, 15);
+}
+
 $(document).ready(function () {
 
-  displayEvent(event_array, false);
+  displayEvent(false, null, null);
 
-  // SEARCH related methods
+  // search ticket START
   $('#search-ticket-button').click(function () {
+    let errorMessage = '';
     let minPrice = $('#min-price-input').val() ? $('#min-price-input').val() : '0';
     let maxPrice = $('#max-price-input').val() ? $('#max-price-input').val() : '1000';
-    console.log('minPrice = ', minPrice, 'maxPrice = ', maxPrice);
+    // console.log('minPrice = ', minPrice, 'maxPrice = ', maxPrice);
 
     $('#min-price-input').css('border', '1px solid #ececec');
+    $('#max-price-input').css('border', '1px solid #ececec');
+    
     if (!minPrice.match(/^[0-9]*$/)) {
       $('#min-price-input').css('border', '1px solid #ff0000');
-      $('#min-price-input').val('');
-      alert('PLease insert positive number');
-      return false;
+      //$('#min-price-input').val('');
+      errorMessage = `Please insert a positive number`;
     }
 
-    $('#max-price-input').css('border', '1px solid #ececec');
     if (!maxPrice.match(/^[0-9]*$/)) {
       $('#max-price-input').css('border', '1px solid #ff0000');
-      $('#max-price-input').val('');
-      alert('PLease insert positive number');
+      //$('#max-price-input').val('');
+      errorMessage = `Please insert a positive number`;
+    }
+
+    if(errorMessage){
+      alert(errorMessage);
       return false;
     }
 
-    const searchResults = [];
-    const search1 = event_obj1.searchTickets(parseInt(minPrice), parseInt(maxPrice));
-    const search2 = event_obj2.searchTickets(parseInt(minPrice), parseInt(maxPrice));
-    const search3 = event_obj3.searchTickets(parseInt(minPrice), parseInt(maxPrice));
-    // console.log('searchTickets1 = ', search1);
-    // console.log('searchTickets2 = ', search2);
-    // console.log('searchTickets3 = ', search3);
-    searchResults.push(search1, search2, search3);
-
-    displayEvent(searchResults, true);
+    displayEvent(true, parseInt(minPrice), parseInt(maxPrice));
   });
-
+  // search ticket END
 
 });
