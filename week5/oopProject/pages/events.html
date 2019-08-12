@@ -161,7 +161,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
   <!-- My script -->
   <script src="../js/event.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="../js/jQuery-scripts.js"></script>
 
   <script type="text/javascript">
 
@@ -190,15 +190,11 @@
 
         if (!validateEventInput(eventName, eventDescription, eventDate)) return false;
 
-        const year = parseInt(eventDate.substring(6, 10));
-        const month = parseInt(eventDate.substring(0, 2)) - 1;
-        const date = parseInt(eventDate.substring(3, 5));
-        const hour = parseInt(eventDate.substring(11, 12));
-        const min = parseInt(eventDate.substring(14, 16));
-        // console.log(year, month, date, hour, min);
+        eventRecommender.addEvent(eventName, eventDescription,
+          new Date(getYear(eventDate), getMonth(eventDate), getDay(eventDate),
+            getHour(eventDate), getMin(eventDate)));
 
         $('input[type="text"]').val('');
-        eventRecommender.addEvent(eventName, eventDescription, new Date(year, month, date, hour, min));
         displayEventTable(eventRecommender.events);
       });
 

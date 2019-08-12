@@ -124,3 +124,9 @@ const validateUserInput = (username, lastName, firstName) => {
   }
   return true;
 }
+
+const getYear = date => parseInt(date.substring(6, 10));
+const getMonth = date => parseInt(date.substring(0, 2)) - 1;
+const getDay = date => parseInt(date.substring(3, 5));
+const getHour = date => parseInt(date.substring(11, 12));
+const getMin = date => parseInt(date.substring(14, 16));
