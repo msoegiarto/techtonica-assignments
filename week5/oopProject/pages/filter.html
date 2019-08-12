@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Event Recommender</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <!-- Datepicker CSS-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+  <!-- My CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Event Recommender</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="../index.html">Home</a>
+        </li>
+        <li class="active">
+          <a href="./users.html">Users</a>
+        </li>
+        <li>
+          <a href="./events.html">Events</a>
+        </li>
+        <li>
+          <a href="#">Filter</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="container-fluid px-xl-5">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ADD EVENT-->
+      <div class="row">
+        <div class="col-lg-6 mb-5">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="h6 text-uppercase mb-0">SEARCH EVENT</h3>
+            </div>
+            <div class="card-body">
+              <form class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-md-4 form-control-label">From Date</label>
+                  <div class="col-md-8">
+                    <input id="inputFromDate" type="text" placeholder="From Date"
+                      class="form-control datetimepicker-input" data-toggle="datetimepicker"
+                      data-target="#inputFromDate">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 form-control-label">Date To</label>
+                  <div class="col-md-8">
+                    <input id="inputToDate" type="text" placeholder="To Date" class="form-control datetimepicker-input"
+                      data-toggle="datetimepicker" data-target="#inputToDate">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-8 ml-auto">
+                    <input id="resetBtn" type="reset" value="Reset" class="btn btn-primary">
+                    <input id="searchByDate" type="submit" value="Search" class="btn btn-primary">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIST OF EVENTS -->
+      <div class="row">
+        <div class="col-lg-12 mb-4">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="text-uppercase mb-0">EVENT LIST</h6>
+            </div>
+            <div class="card-body">
+              <table class="table table-striped card-text">
+                <thead>
+                  <tr>
+                    <th style="width:5%">#</th>
+                    <th style="width:25%">Event Name</th>
+                    <th style="width:35%">Event Description</th>
+                    <th style="width:10%">Event Date</th>
+                    <th style="width:10%">Event Time</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- ./CONTENT -->
+  </div> <!-- ./WRAPPER-->
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- Datepicker JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- My script -->
+  <script src="../js/event.js"></script>
+  <script src="../js/script.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      // DATEPICKER
+      $('#inputFromDate').datetimepicker();
+      $('#inputToDate').datetimepicker();
+
+      $('#searchByDate').click(e => {
+        e.preventDefault();
+
+        const inputFromDate = $('#inputFromDate').val();
+        const inputToDate = $('#inputToDate').val();
+
+        const fromYear = parseInt(inputFromDate.substring(6, 10));
+        const fromMonth = parseInt(inputFromDate.substring(0, 2)) - 1;
+        const fromDate = parseInt(inputFromDate.substring(3, 5));
+        const fromHour = parseInt(inputFromDate.substring(11, 12));
+        const fromMin = parseInt(inputFromDate.substring(14, 16));
+
+        const toYear = parseInt(inputToDate.substring(6, 10));
+        const toMonth = parseInt(inputToDate.substring(0, 2)) - 1;
+        const toDate = parseInt(inputToDate.substring(3, 5));
+        const toHour = parseInt(inputToDate.substring(11, 12));
+        const toMin = parseInt(inputToDate.substring(14, 16));
+
+        const eventByDate = eventRecommender.filterByDate(new Date(fromYear, fromMonth, fromDate, fromHour, fromMin),
+          new Date(toYear, toMonth, toDate, toHour, toMin));
+
+        displayEventTable(eventByDate);
+      });
+
+    });
+  </script>
+</body>
+
+</html>
