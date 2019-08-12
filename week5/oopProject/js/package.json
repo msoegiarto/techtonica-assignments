@@ -1,0 +1,11 @@
+{
+  "name": "oopproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "EventRecommender.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Mega",
+  "license": "ISC"
+}

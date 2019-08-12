@@ -78,10 +78,13 @@ eventRecommender.addEvent('Event1', 'this is event1', new Date(2019, 9, 20, 15, 
 eventRecommender.addEvent('Event2', 'this is event2', new Date("November 18, 2019"));
 eventRecommender.addEvent('Event3', 'this is event3', new Date(2019, 11, 17, 11));
 
-
 // save an event to user personal events array
 eventRecommender.saveUserEvent(eventRecommender.users[0], eventRecommender.events[0]);
 eventRecommender.saveUserEvent(eventRecommender.users[0], eventRecommender.events[2]);
 eventRecommender.saveUserEvent(eventRecommender.users[2], eventRecommender.events[2]);
-// console.log('filter by user = ', eventRecommender.filter(0, user1));
-// console.log('filter by event = ', eventRecommender.filter(1, event3));
+
+module.exports = {
+  EventRecommender,
+  Events,
+  Users
+};
