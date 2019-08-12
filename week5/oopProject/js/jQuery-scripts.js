@@ -70,7 +70,7 @@ const displayUserTable = eventRecommender => {
       $("#table-body").append(html);
 
       // the modal
-      const modalDiv = $('<div></div>').attr({ id: 'modal' + index, tabindex: '-1', role: 'dialog' }).addClass('modal fade');
+      const modalDiv = $('<div></div>').attr({ id: 'modal' + index, tabindex: '-1', role: 'dialog', "aria-labelledby": "modal"+index, "aria-hidden": true }).addClass('modal fade');
       const modalDialog = $('<div></div>').addClass('modal-dialog').attr({ role: 'document' });
       const modalContent = $('<div></div>').addClass('modal-content');
       const modalHeader = $('<div></div>').addClass('modal-header').append(`<h5 class="modal-title">${item.username}'s Events</h5>`);
