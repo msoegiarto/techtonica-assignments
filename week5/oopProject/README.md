@@ -1,6 +1,6 @@
 # Event Recommender
 
-A website with the ability to add/view/delete users, add/view/delete events and search events by date.
+A website to add/view/delete users, add/view/delete events and search events by date.
 
 [Click here for live site](https://evrec.netlify.com/)
 
