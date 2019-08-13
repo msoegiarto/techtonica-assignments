@@ -2,6 +2,9 @@
 
 A website with the ability to add/view/delete users, add/view/delete events and search events by date.
 
+[Click here for live site](https://evrec.netlify.com/)
+
+
 ## Display
 
 Home with expanded menu:
@@ -38,6 +41,7 @@ Filter Page (currently filter event by date):
 
 ![Page Filter](./oopProjectImgs/Page_filterByDate.png)
 
+
 ## Build with
 
 [Bootstrap](https://getbootstrap.com/)
@@ -46,10 +50,12 @@ Filter Page (currently filter event by date):
 
 [Fontawesome](https://fontawesome.com/)
 
+
 ## Check this out
 
 [Techtonica](https://techtonica.org/)
 
-### Authors
+
+## Authors
 
 __Mega Soegiarto__
