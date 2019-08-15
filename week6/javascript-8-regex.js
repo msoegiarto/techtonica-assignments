@@ -31,12 +31,12 @@ console.log(function2('is symantec a word?'));
 const function3 = inputString => {
   if (!validateInputIsString(inputString)) return 'Input is invalid';
 
-  const matchPattern = /\w+[i][n][g]\s?/g;
+  const matchPattern = /\w+[i][n][g]([^\w]|$)/g;
 
   return inputString.replace(matchPattern, '');
 }
 console.log(function3('i am going to try using chopsticks'));
-console.log(function3('do something'));
+console.log(function3('ingram aringa eating'));
 
 // Write a function that takes a string and returns true if it is an email address? 
 // Compare your answer with your neighbor.
