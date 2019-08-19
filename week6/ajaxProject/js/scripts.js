@@ -1,3 +1,4 @@
+// .env and config.js; need to source .env
 const I_LOVE = require('../config.js');
 console.log(I_LOVE);
 
