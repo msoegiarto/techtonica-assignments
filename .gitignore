@@ -1,5 +1,6 @@
 # Project Secrets
 .my-secret-keys
+week6/ajaxProject/.env
 
 #Project-generated files
 package-lock.json
@@ -9,3 +10,5 @@ package-lock.json
 
 #just some files
 *.java
+
+

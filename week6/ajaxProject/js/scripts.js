@@ -1,3 +1,6 @@
+const I_LOVE = require('../config.js');
+console.log(I_LOVE);
+
 const getData = () => {
   const apiPath = `https://api.jikan.moe/v3/anime/138/characters_staff`;
   $.ajax({
