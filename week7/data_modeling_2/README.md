@@ -9,3 +9,5 @@ Imagine you are creating a food website that will have recipes by top chefs from
 - city (where the chef lives)
 - restaurants where the chef has worked
 - chef's favorite ingredient
+
+![Recipe ERD](./RECIPE.png)
