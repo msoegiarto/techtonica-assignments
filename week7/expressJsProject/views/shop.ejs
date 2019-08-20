@@ -1,0 +1,111 @@
+<% include partials/header %>
+
+<p><a href="/">Back to home</a></p>
+
+<h1>List of items</h1>
+
+<table id="itemList" style="border: 1px solid #ececec">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.forEach( function(item, index) { %>
+    <tr id=index>
+      <td><%= item.itemName %></td>
+      <td><%= item.itemPrice %></td>
+      <td><a class="addToCartLink" href="#">Add to cart</a></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<div id="shoppingCartDiv">
+  <h3>My Shopping Cart</h3>
+  <table id="shoppingCartTable" style="border: 1px solid #ececec">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="shoppingCartBody">
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+  const shoppingCartDiv = document.getElementById('shoppingCartDiv');
+  const shoppingCartBody = document.getElementById('shoppingCartBody');
+
+  const toggleShoppingCartList = () => {
+    if (shoppingCartBody.children.length > 0) {
+      shoppingCartDiv.style.display = 'block';
+    } else {
+      shoppingCartDiv.style.display = 'none';
+    }
+  }
+
+  const addToCart = event => {
+    const itemName = event.target.parentNode.previousElementSibling.previousElementSibling.textContent;
+    const itemPrice = event.target.parentNode.previousElementSibling.textContent;
+
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
+    const td3 = document.createElement('td');
+    const deleteLink = document.createElement('a');
+
+    td1.textContent = itemName;
+    td2.textContent = itemPrice;
+    td3.appendChild(deleteLink);
+    deleteLink.setAttribute('href', '#');
+    deleteLink.className = "deleteFromCartLink";
+    deleteLink.textContent = "Delete";
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.setAttribute('id', itemName);
+    shoppingCartBody.appendChild(tr);
+
+    toggleShoppingCartList();
+  }
+
+  const deleteFromCart = event => {
+    // console.log('target = ', event.target);
+    if(event.target.tagName !== 'A') return true;
+    
+    const tr = event.target.parentNode.parentNode;
+    tr.remove();
+    
+    toggleShoppingCartList();
+  }
+
+  const addToCartEventListener = () => {
+    const addToCartLink = document.getElementsByClassName('addToCartLink');
+    for (let i = 0; i < addToCartLink.length; i++) {
+      addToCartLink[i].addEventListener('click', addToCart);
+    }
+  }
+
+  const deleteCartEventListener = () => {
+    shoppingCartBody.addEventListener('click', deleteFromCart);
+
+  }
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    toggleShoppingCartList();
+    addToCartEventListener();
+    deleteCartEventListener();
+  });
+
+</script>
+<% include partials/footer %>

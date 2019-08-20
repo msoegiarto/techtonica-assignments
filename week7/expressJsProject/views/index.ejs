@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<p><a href="/">Back to home</a></p>
+
+<h1>Hello from EJS</h1>
+
+<% if(errors){ %>
+<ul>
+  <% errors.forEach( function(error) { %>
+  <li><%= error.msg %></li>
+  <% }); %>
+</ul>
+<% } %>
+
+<form method="POST" action="/users/add">
+  <label>Username</label>
+  <input type="text" name="username">
+  <br>
+  <label>First Name</label>
+  <input type="text" name="firstName">
+  <br>
+  <label>Email</label>
+  <input type="text" name="email">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p><%= title %></p>
+<ul>
+  <% users.forEach( function(user) { %>
+  <li><%= user.username %> - <%= user.first_name %></li>
+  <% }); %>
+  <% if(newUser){ %>
+    <li><%= newUser.username %> - <%= newUser.firstName %> - <%= newUser.email %></li>
+  <% } %>
+</ul>
+
+<% include partials/footer %>

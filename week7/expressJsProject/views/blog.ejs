@@ -1,0 +1,70 @@
+<% include partials/header %>
+
+<p><a href="/">Back to home</a></p>
+
+<h1><%= title %></h1>
+<% if(errors){ %>
+<ul>
+  <% errors.forEach( function(error) { %>
+  <li><%= error.msg %></li>
+  <% }); %>
+</ul>
+<% } %>
+<div>
+  <form method="POST" action="/blog/addPost">
+    <input type="text" id="postTitle" name="postTitle" placeholder="Title" style="width: 500px">
+    <br />
+    <textarea rows="4" cols="150" id="postBody" name="postBody"></textarea>
+    <br />
+    <input id="submitBtn" type="submit" value="Post">
+  </form>
+</div>
+
+<section id="blogPosts">
+  <table>
+    <% if (!blogPosts) { %>
+    <tbody>
+      <tr>
+        <th>Hi</th>
+      </tr>
+      <tr>
+        <td>You have not posted a blog</td>
+      </tr>
+    </tbody>
+    <% } else { %>
+    <tbody>
+      <tr>
+        <th colspan="2"><%= blogPosts.postTitle %></th>
+      </tr>
+      <tr>
+        <td><%= blogPosts.postBody %></td>
+        <td><a id="editPostLink" href="#">Edit post</a></td>
+      </tr>
+    </tbody>
+    <% } %>
+  </table>
+</section>
+
+<script type="text/javascript">
+  const postTitle = document.getElementById('postTitle');
+  const postBody = document.getElementById('postBody');
+  const submitBtn = document.getElementById('submitBtn');
+  const editPostLink = document.getElementById('editPostLink');
+
+  if (editPostLink) {
+    editPostLink.addEventListener('click', function () {
+      const tbody = this.parentNode.parentNode.parentNode;
+      const thisPostTitle = tbody.children[0].firstElementChild.textContent;
+      const thisPostBody = tbody.children[1].firstElementChild.textContent;
+      
+      this.parentNode.style.display = 'none';
+      submitBtn.value = 'Edit';
+      postTitle.value = thisPostTitle;
+      postTitle.focus();
+      postBody.textContent = thisPostBody;
+    });
+  }
+
+</script>
+
+<% include partials/footer %>
