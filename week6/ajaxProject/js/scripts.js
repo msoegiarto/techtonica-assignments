@@ -1,5 +1,6 @@
 // .env and config.js; need to source .env
-const I_LOVE = require('../config.js');
+// const I_LOVE = require('../config.js'); // will print the whole config.js
+const { I_LOVE } = require('../config.js'); // will print only the value -> lamp
 console.log(I_LOVE);
 
 const getData = () => {
