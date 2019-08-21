@@ -1,9 +1,10 @@
 ## Codecademy screenshot
-![screenshot](/Codecademy_SQL_MultipleTable.png)
+
+![screenshot](./Codecademy_SQL_MultipleTable.png)
 
 ## Independent Practice
-made for [this](https://github.com/Techtonica/curriculum/blob/master/databases/sql-2.md) assigment
 
+### made for [this](https://github.com/Techtonica/curriculum/blob/master/databases/sql-2.md) assigment
 
 -- create table USERS and POSTS
 CREATE TABLE users (
