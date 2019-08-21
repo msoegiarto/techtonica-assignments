@@ -1,6 +1,7 @@
 # Project Secrets
 .my-secret-keys
 week6/ajaxProject/.env
+week7/expressJsProject/.env
 
 #Project-generated files
 package-lock.json

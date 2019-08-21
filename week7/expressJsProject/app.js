@@ -3,6 +3,11 @@ const bodyParser = require('body-parser');
 const path = require('path'); // path is inside core package
 const { check, validationResult } = require('express-validator');
 
+// .env and config.js; need to source .env
+// const I_LOVE = require('../config.js'); // will print the whole config.js
+const { I_LOVE } = require('../config.js'); // will print only the value -> lamp
+console.log('I love ', I_LOVE);
+
 const app = express();
 
 //  Logger middleware, has to be set before route handler
