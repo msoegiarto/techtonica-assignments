@@ -6,7 +6,7 @@
 
 ### made for [this](https://github.com/Techtonica/curriculum/blob/master/databases/sql-2.md) assigment
 
--- create table USERS and POSTS
+-- create table USERS
 
     CREATE TABLE users (
         id INTEGER PRIMARY KEY,
