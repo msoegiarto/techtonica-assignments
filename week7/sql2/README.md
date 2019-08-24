@@ -83,7 +83,7 @@
 -- add some sample data to your new bio fields, but not for every user
 
     UPDATE users 
-    SET bio = 'user is an apprentice at tectonic'a
+    SET bio = 'user is an apprentice at tectonica'
     WHERE id = 1;
 
 -- query just the bios of all users in the databases
