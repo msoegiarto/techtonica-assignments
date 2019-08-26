@@ -2,13 +2,14 @@
 .my-secret-keys
 week6/ajaxProject/.env
 week7/expressJsProject/.env
+.env
 
 #Project-generated files
 package-lock.json
+node_modules/
 
 #Locally-generated files
 .DS_Store
-node_modules/
 
 #just some files
 *.java
