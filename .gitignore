@@ -8,6 +8,7 @@ package-lock.json
 
 #Locally-generated files
 .DS_Store
+node_modules/
 
 #just some files
 *.java
