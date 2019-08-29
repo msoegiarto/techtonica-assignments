@@ -115,6 +115,8 @@ Create a table called `"Users-Events"`
 
    The program will ask if user wants to quit the program. Enter 'y' to quit or 'n' to go back to the main menu.
 
+   ![](./images/good_bye.png)
+
 #### Author
 
 Mega

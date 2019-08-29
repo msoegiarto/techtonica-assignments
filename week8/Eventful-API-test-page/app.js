@@ -139,7 +139,19 @@ app.promptQuitProgram = (continueCallback) => {
     default: false
   }).then(res => {
     if (res.input) {
-      console.log('Good bye');
+      console.log(`
+      /$$$$$$                            /$$       /$$                          
+     /$$__  $$                          | $$      | $$                          
+    | $$   _/  /$$$$$$   /$$$$$$   /$$$$$$$       | $$$$$$$  /$$   /$$  /$$$$$$ 
+    | $$ /$$$$ /$$__  $$ /$$__  $$ /$$__  $$      | $$__  $$| $$  | $$ /$$__  $$
+    | $$|_  $$| $$    $$| $$    $$| $$  | $$      | $$    $$| $$  | $$| $$$$$$$$
+    | $$    $$| $$  | $$| $$  | $$| $$  | $$      | $$  | $$| $$  | $$| $$_____/
+    |  $$$$$$/|  $$$$$$/|  $$$$$$/|  $$$$$$$      | $$$$$$$/|  $$$$$$$|  $$$$$$$
+      ______/    _____/    _____/    ______/      |_______/   ____  $$  ______/
+                                                             /$$  | $$          
+                                                            |  $$$$$$/          
+                                                              ______/           
+    `);
       process.exitCode = 0;
       process.exit();
     } else {
@@ -149,30 +161,38 @@ app.promptQuitProgram = (continueCallback) => {
 }
 
 const continueSearchEvents = (result, quitProgramCallback) => {
+
+  if (!result) {
+    promptSearchAgain(quitProgramCallback);
+  } else {
+    inquirer.prompt({
+      type: 'confirm',
+      message: 'Would you like to save the result? ',
+      name: 'input',
+      default: true
+    }).then(res => {
+
+      if (res.input) {
+        insertEvent(result, quitProgramCallback);
+      } else {
+        promptSearchAgain(quitProgramCallback);
+      }
+    });
+  }
+}
+
+const promptSearchAgain = (quitProgramCallback) => {
   inquirer.prompt({
     type: 'confirm',
-    message: 'Would you like to save the result? ',
+    message: 'Search again? ',
     name: 'input',
     default: true
   }).then(res => {
-
     if (res.input) {
-      insertEvent(result, quitProgramCallback);
+      app.searchEventful(quitProgramCallback);
     } else {
-      inquirer.prompt({
-        type: 'confirm',
-        message: 'Search again? ',
-        name: 'input',
-        default: true
-      }).then(res2 => {
-        if (res2.input) {
-          app.searchEventful(quitProgramCallback);
-        } else {
-          quitProgramCallback();
-        }
-      });
+      quitProgramCallback();
     }
-
   });
 }
 
