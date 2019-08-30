@@ -2,7 +2,7 @@
 
 made for [this](https://github.com/Techtonica/curriculum/blob/master/projects/eventonica-project.md) assignment
 
-# Setup PostgreSQL database
+## Setup PostgreSQL database
 
 Create a database called `eventonica`
 
@@ -33,7 +33,7 @@ Create a table called `"Users-Events"`
       event_id INT REFERENCES "Events" (id) ON DELETE SET NULL,
     );
 
-# Main menu
+## Main menu
 
    There are 7 options to choose:
 
@@ -53,7 +53,7 @@ Create a table called `"Users-Events"`
 
    ![](./images/main_menu.png)
 
-# The program
+## The program
 
 1. Complete a sentence
 
@@ -116,6 +116,14 @@ Create a table called `"Users-Events"`
    The program will ask if user wants to quit the program. Enter 'y' to quit or 'n' to go back to the main menu.
 
    ![](./images/good_bye.png)
+
+## Build with
+
+[pg](https://node-postgres.com/)
+
+[inquirer](https://github.com/SBoudrias/Inquirer.js/)
+
+[eventful-node](http://api.eventful.com/)
 
 #### Author
 
