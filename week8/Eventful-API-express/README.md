@@ -50,7 +50,7 @@ API client made for [this](https://github.com/Techtonica/curriculum/blob/master/
        {
          "username": "example",
          "title": "example event title"
-      }
+       }
 
 9. `GET /users/:id/events` display a single user's saved events
 
