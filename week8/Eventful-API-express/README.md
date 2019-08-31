@@ -22,9 +22,9 @@ API client made for [this](https://github.com/Techtonica/curriculum/blob/master/
 
    parameter = username
 
-    {
-      "username": "example"
-    }
+       {
+         "username": "example"
+       }
 
 4. `GET /events` display all events
 
@@ -36,21 +36,21 @@ API client made for [this](https://github.com/Techtonica/curriculum/blob/master/
 
    parameter = title, start_time, venue_name, venue_address
 
-    {
-      "title": "example event title",
-      "start_time": "2019-01-01 07:00:00.000",
-      "venue_name": "example venue name",
-      "venue_address": "example venue address"
-    }
+       {
+         "title": "example event title",
+         "start_time": "2019-01-01 07:00:00.000",
+         "venue_name": "example venue name",
+         "venue_address": "example venue address"
+       }
 
 8. `POST /userevents` match a user with an event
 
    parameter = username, title
 
-    {
-      "username": "example",
-      "title": "example event title"
-    }
+       {
+         "username": "example",
+         "title": "example event title"
+      }
 
 9. `GET /users/:id/events` display a single user's saved events
 
