@@ -154,8 +154,10 @@ const searchEventfulApi = (keywords, callbackFn) => {
     if (err) console.error(err);
 
     const searchResults = data.search.events;
-    if (searchResults.event) {
-      const event = Array.isArray(searchResults.event) ? searchResults.event[0] : searchResults.event;
+    if (searchResults) {
+      // note: if searching only produce 1 event, 
+      // the data type of the result returned is an object instead of an array
+      const event = (searchResults.event.length > 1) ? searchResults.event[0] : searchResults.event;
       const resultEvent = {
         title: event.title,
         start_time: event.start_time,

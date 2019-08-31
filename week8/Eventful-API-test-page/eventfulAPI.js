@@ -14,7 +14,9 @@ function searchEventsFunction(optionsObj, callBackFn) {
       }
       const result = data.search.events;
       if (result) {
-        let resultEvent = result.event[0];
+        // note: if searching only produce 1 event, 
+        // the data type of the result returned is an object instead of an array
+        let resultEvent = (result.event.length > 1) ? result.event[0] : result.event;
         console.log('Event listings: ');
         console.log("===========================================================")
         console.log('title: ', resultEvent.title);
