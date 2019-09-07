@@ -15,7 +15,8 @@ class ViewUsersTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      modalTitle: ''
     };
 
     this.onDelete = this.onDelete.bind(this);
@@ -43,9 +44,13 @@ class ViewUsersTable extends Component {
   onViewEvents(e) {
     if (!this.state.modal) {
       const id = e.target.parentNode.parentNode.getAttribute('id');
+      const index = e.target.parentNode.parentNode.getAttribute('label');
+      const username = this.props.users[index].username;
+      this.setState({ modalTitle: username });
       this.props.getSingleUserEvents(id);
       this.toggle();
     } else {
+      this.setState({ modalTitle: '' });
       this.toggle();
     }
   }
@@ -102,7 +107,7 @@ class ViewUsersTable extends Component {
                   </tbody>
                 </Table>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} size="lg">
-                  <ModalHeader toggle={this.toggle}>User's Events</ModalHeader>
+                  <ModalHeader toggle={this.toggle}>{this.state.modalTitle}'s Events</ModalHeader>
                   <ModalBody>
                     <Table striped>
                       <thead>

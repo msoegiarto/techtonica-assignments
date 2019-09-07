@@ -37,7 +37,7 @@ class SearchEventsTable extends Component {
           <Col sm={{ size: 10, offset: 1 }} >
             <Card>
               <CardBody>
-                <CardTitle>Search Results</CardTitle>
+                <CardTitle>Available Events</CardTitle>
                 <Table striped>
                   <thead>
                     <tr>
