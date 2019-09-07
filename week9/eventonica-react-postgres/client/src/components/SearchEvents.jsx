@@ -11,6 +11,7 @@ class SearchEvents extends Component {
     this.state = {
       message: '',
       errMessage: '',
+      cardTitle: 'Search Results',
       searchResults: [],
       buttonName: `Add`,
       btnDisabled: false
@@ -105,6 +106,7 @@ class SearchEvents extends Component {
         <SearchEventsForm
           onSearchEvents={this.onSearchEvents} btnDisabled={this.state.btnDisabled} />
         <SearchEventsTable
+          cardTitle={this.state.cardTitle}
           searchResults={this.state.searchResults}
           buttonName={this.state.buttonName}
           doButtonAction={this.doButtonAction}

@@ -23,6 +23,7 @@ class MatchUser extends Component {
       username: '',
       message: '',
       errMessage: '',
+      cardTitle: 'Available Events',
       searchResults: [],
       buttonName: `Match`,
       btnDisabled: false,
@@ -149,6 +150,7 @@ class MatchUser extends Component {
           </Col>
         </Row>
         <SearchEventsTable
+          cardTitle={this.state.cardTitle}
           searchResults={this.state.searchResults}
           buttonName={this.state.buttonName}
           noEventMessage={this.state.noEventMessage}
