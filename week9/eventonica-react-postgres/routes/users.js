@@ -59,7 +59,7 @@ router.get('/:id/events', (req, res, next) => {
  */
 router.post('/', (req, res, next) => {
   const { username } = req.body;
-  
+
   db.query(`INSERT INTO "Users" (username) VALUES ($1)`, [username], (error, result) => {
     if (error) {
       res.send({ msg: error.detail });
@@ -93,8 +93,12 @@ router.post('/:id/events', (req, res, next) => {
   const { title } = req.body;
 
   db.query(query, [id, title], (error, result) => {
-    if (error) return next(error);
-    res.send({msg: `${title} has been saved by user`});
+    if (error) {
+      res.send({ msg: error.detail });
+      return next(error);
+    }
+    
+    res.send({ success: true });
   });
 });
 

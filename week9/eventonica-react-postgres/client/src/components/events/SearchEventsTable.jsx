@@ -19,14 +19,13 @@ class SearchEventsTable extends Component {
       venue_address: ''
     };
 
-    this.onSave = this.onSave.bind(this);
+    this.onClickButton = this.onClickButton.bind(this);
   }
 
-  onSave(e) {
-    e.preventDefault();
-    const index = e.target.parentNode.parentNode.getAttribute('id');
-
-    this.props.onSaveEvent(index);
+  onClickButton(e) {
+    const id = e.target.parentNode.parentNode.getAttribute('id');
+    const index = e.target.parentNode.parentNode.getAttribute('label');
+    this.props.doButtonAction({ id, index });
   };
 
   render() {
@@ -34,7 +33,7 @@ class SearchEventsTable extends Component {
 
     if (searchResults.length > 0) {
       return (
-        <Row className="mt-5">
+        <Row>
           <Col sm={{ size: 10, offset: 1 }} >
             <Card>
               <CardBody>
@@ -51,8 +50,8 @@ class SearchEventsTable extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {searchResults.map(({ title, start_time, venue_name, venue_address }, index) => (
-                      <tr key={index} id={index}>
+                    {searchResults.map(({ id, title, start_time, venue_name, venue_address }, index) => (
+                      <tr key={index} id={id} label={index}>
                         <td>{index + 1}</td>
                         <td>{title}</td>
                         <td>{start_time}</td>
@@ -62,12 +61,24 @@ class SearchEventsTable extends Component {
                           <Button
                             size="sm"
                             color="success"
-                            onClick={this.onSave}>Add</Button>
+                            onClick={this.onClickButton}>{this.props.buttonName}</Button>
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </Table>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      );
+    } else if (this.props.noEventMessage) {
+      return (
+        <Row>
+          <Col sm={{ size: 10, offset: 1 }} >
+            <Card>
+              <CardBody>
+                <CardTitle>No events available</CardTitle>
               </CardBody>
             </Card>
           </Col>

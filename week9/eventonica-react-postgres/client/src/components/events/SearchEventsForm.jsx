@@ -32,7 +32,7 @@ class SearchEventsForm extends Component {
   render() {
     return (
       <Row>
-        <Col className="mt-5" sm={{ size: 10, offset: 1 }}>
+        <Col className="mt-5 mb-5" sm={{ size: 10, offset: 1 }}>
           <Card>
             <CardBody>
               <CardTitle>Search Events</CardTitle>

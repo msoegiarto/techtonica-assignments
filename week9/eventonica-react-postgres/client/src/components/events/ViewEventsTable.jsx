@@ -16,8 +16,8 @@ class ViewEventsTable extends Component {
     super(props);
     this.state = {
       events: [],
-      modalTitle: '',
       modal: false,
+      modalTitle: '',
       attendees: []
     }
 
@@ -43,7 +43,7 @@ class ViewEventsTable extends Component {
         .then(res => {
           this.setState({
             modalTitle: title,
-            attendees: res.data
+            attendees: res.data.length > 0 ? res.data : [{ username: `No one has signed up for this event` }]
           });
 
           this.toggle();

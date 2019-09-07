@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import {
   Card,
   CardBody,
@@ -22,7 +23,10 @@ class ViewUsersTable extends Component {
     this.props.onDeleteUser(id);
   }
 
-  onMatch() { }
+  onMatch(e) {
+    const id = e.target.parentNode.parentNode.getAttribute('id');
+    this.props.history.push(`/match/${id}`);
+  }
 
   componentDidMount() {
     this.props.getAllUsers();
@@ -79,4 +83,4 @@ class ViewUsersTable extends Component {
   }
 }
 
-export default ViewUsersTable;
+export default withRouter(ViewUsersTable);

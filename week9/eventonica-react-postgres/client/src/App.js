@@ -6,6 +6,7 @@ import './App.css';
 import SearchEvents from './components/SearchEvents.jsx';
 import ViewEvents from './components/ViewEvents.jsx';
 import ViewUsers from './components/ViewUsers.jsx';
+import MatchUser from './components/MatchUser.jsx';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <div>
         <Route exact path='/' component={SearchEvents} />
         <Route exact path='/view' component={ViewEvents} />
-        <Route exact path="/user" component={ViewUsers} />
+        <Route exact path='/user' component={ViewUsers} />
+        <Route exact path='/match/:userid' component={MatchUser} />
       </div>
     </BrowserRouter>
   );

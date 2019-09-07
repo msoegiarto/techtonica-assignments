@@ -11,19 +11,19 @@ class SearchEvents extends Component {
     this.state = {
       message: '',
       errMessage: '',
-      searchResults: []
+      searchResults: [],
+      buttonName: `Add`
     };
 
     this.onSearchEvents = this.onSearchEvents.bind(this);
-
-    this.onSaveEvent = this.onSaveEvent.bind(this);
+    this.doButtonAction = this.doButtonAction.bind(this);
   };
 
   onSearchEvents(keywords) {
     this.setState({
       message: '',
       errMessage: '',
-      searchResults: []
+      searchResults: [],
     });
 
     const data = {
@@ -34,7 +34,7 @@ class SearchEvents extends Component {
       .get(`http://localhost:5000/api/eventonica/events/search`, data)
       .then(res => {
         const results = [res];
-        console.log(results);
+
         if (results[0].data.message) {
           this.setState({
             errMessage: results[0].data.message
@@ -49,18 +49,20 @@ class SearchEvents extends Component {
       })
       .catch(err => {
         console.error(err);
-        console.log("Error in SearchEvents!");
+        this.setState({
+          errMessage: err.detail
+        });
       });
   }
 
-  onSaveEvent(index) {
+  doButtonAction(param) {
     this.setState({
       message: '',
       errMessage: ''
     });
 
     axios
-      .post(`http://localhost:5000/api/eventonica/events/`, this.state.searchResults[index])
+      .post(`http://localhost:5000/api/eventonica/events/`, this.state.searchResults[param.index])
       .then(res => {
         console.log(res);
         if (res.data.msg) {
@@ -68,7 +70,7 @@ class SearchEvents extends Component {
             errMessage: res.data.msg
           });
         } else {
-          this.setState({ message: `Event "${this.state.searchResults[index].title}" has been saved.` });
+          this.setState({ message: `Event "${this.state.searchResults[param.index].title}" has been saved.` });
         }
       })
       .catch(err => {
@@ -90,7 +92,8 @@ class SearchEvents extends Component {
           onSearchEvents={this.onSearchEvents} />
         <SearchEventsTable
           searchResults={this.state.searchResults}
-          onSaveEvent={this.onSaveEvent} />
+          buttonName={this.state.buttonName}
+          doButtonAction={this.doButtonAction} />
       </div>
     );
   }
