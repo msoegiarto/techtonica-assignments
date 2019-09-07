@@ -12,6 +12,10 @@ API client made for [this](https://github.com/Techtonica/curriculum/blob/master/
 
 [dotenv](https://github.com/motdotla/dotenv)
 
+## ERD
+
+![](./readme_imgs/ERD_eventonica.png)
+
 ## Endpoint
 
 1. `GET /users` display all users
