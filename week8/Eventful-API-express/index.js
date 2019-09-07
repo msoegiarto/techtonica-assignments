@@ -6,7 +6,7 @@ const routes = require('./routes/index');
 const hostname = '127.0.0.1';
 const port = 3000;
 const app = express(); // setup express application
-const server = http.createServer(app);
+
 
 // Parse incoming requests data
 app.use(bodyParser.json());
@@ -16,6 +16,6 @@ routes(app);
 
 app.get('*', (req, res) => res.status(200).send({ message: 'Welcome to Eventonica', }));
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
