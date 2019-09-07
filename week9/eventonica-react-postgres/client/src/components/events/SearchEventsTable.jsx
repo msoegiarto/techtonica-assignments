@@ -61,7 +61,7 @@ class SearchEventsTable extends Component {
                           <Button
                             size="sm"
                             color="success"
-                            onClick={this.onClickButton}>{this.props.buttonName}</Button>
+                            onClick={this.onClickButton} disabled={this.props.btnDisabled}>{this.props.buttonName}</Button>
                         </td>
                       </tr>
                     ))}

@@ -12,19 +12,28 @@ class SearchEvents extends Component {
       message: '',
       errMessage: '',
       searchResults: [],
-      buttonName: `Add`
+      buttonName: `Add`,
+      btnDisabled: false
     };
 
     this.onSearchEvents = this.onSearchEvents.bind(this);
     this.doButtonAction = this.doButtonAction.bind(this);
+    this.toggleBtnDisabled = this.toggleBtnDisabled.bind(this);
   };
+
+  toggleBtnDisabled() {
+    this.setState(prevState => ({
+      btnDisabled: !prevState.btnDisabled
+    }));
+  }
 
   onSearchEvents(keywords) {
     this.setState({
       message: '',
       errMessage: '',
-      searchResults: [],
+      searchResults: []
     });
+    this.toggleBtnDisabled();
 
     const data = {
       params: { keywords: keywords }
@@ -52,6 +61,8 @@ class SearchEvents extends Component {
         this.setState({
           errMessage: err.detail
         });
+      }).finally(() => {
+        this.toggleBtnDisabled();
       });
   }
 
@@ -60,6 +71,7 @@ class SearchEvents extends Component {
       message: '',
       errMessage: ''
     });
+    this.toggleBtnDisabled();
 
     axios
       .post(`http://localhost:5000/api/eventonica/events/`, this.state.searchResults[param.index])
@@ -78,6 +90,8 @@ class SearchEvents extends Component {
         this.setState({
           errMessage: err.detail
         });
+      }).finally(() => {
+        this.toggleBtnDisabled();
       });
   }
 
@@ -89,11 +103,12 @@ class SearchEvents extends Component {
         <AppNavbar />
         <Message message={this.state.message} errMessage={this.state.errMessage} />
         <SearchEventsForm
-          onSearchEvents={this.onSearchEvents} />
+          onSearchEvents={this.onSearchEvents} btnDisabled={this.state.btnDisabled} />
         <SearchEventsTable
           searchResults={this.state.searchResults}
           buttonName={this.state.buttonName}
-          doButtonAction={this.doButtonAction} />
+          doButtonAction={this.doButtonAction}
+          btnDisabled={this.state.btnDisabled} />
       </div>
     );
   }

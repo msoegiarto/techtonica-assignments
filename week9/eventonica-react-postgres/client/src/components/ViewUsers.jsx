@@ -12,12 +12,14 @@ class ViewUsers extends Component {
     this.state = {
       message: '',
       errMessage: '',
-      users: []
+      users: [],
+      userEvents: []
     }
 
     this.onSaveUser = this.onSaveUser.bind(this);
     this.onDeleteUser = this.onDeleteUser.bind(this);
     this.getAllUsers = this.getAllUsers.bind(this);
+    this.getSingleUserEvents = this.getSingleUserEvents.bind(this);
   }
 
   onDeleteUser(id) {
@@ -86,13 +88,26 @@ class ViewUsers extends Component {
       });
   }
 
+  getSingleUserEvents(id) {
+    axios
+      .get(`http://localhost:5000/api/eventonica/users/${id}/events`)
+      .then(res => {
+        this.setState({
+          userEvents: res.data
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   render() {
     return (
       <div>
         <AppNavbar />
         <Message message={this.state.message} errMessage={this.state.errMessage} />
         <CreateUserForm onSaveUser={this.onSaveUser} />
-        <ViewUsersTable onDeleteUser={this.onDeleteUser} users={this.state.users} getAllUsers={this.getAllUsers} />
+        <ViewUsersTable onDeleteUser={this.onDeleteUser} users={this.state.users} getAllUsers={this.getAllUsers} getSingleUserEvents={this.getSingleUserEvents} userEvents={this.state.userEvents} />
       </div>
     );
   }

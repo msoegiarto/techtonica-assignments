@@ -4,7 +4,7 @@ import { Row, Col, Alert } from 'reactstrap';
 class Message extends Component {
   // scroll to message
   componentDidUpdate() {
-    if (this.props.message) {
+    if (this.props.message || this.props.errMessage) {
       const element = document.getElementById("alert");
       element.scrollIntoView({ behavior: 'smooth' });
     }

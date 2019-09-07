@@ -10,9 +10,9 @@ import {
   Col
 } from 'reactstrap';
 
-import AppNavbar from './shared/AppNavbar.jsx';
-import Message from './shared/Message.jsx';
-import SearchEventsTable from './events/SearchEventsTable.jsx';
+import AppNavbar from '../shared/AppNavbar.jsx';
+import Message from '../shared/Message.jsx';
+import SearchEventsTable from '../events/SearchEventsTable.jsx';
 
 class MatchUser extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class MatchUser extends Component {
       errMessage: '',
       searchResults: [],
       buttonName: `Match`,
+      btnDisabled: false,
       noEventMessage: false
     }
 
@@ -151,7 +152,8 @@ class MatchUser extends Component {
           searchResults={this.state.searchResults}
           buttonName={this.state.buttonName}
           noEventMessage={this.state.noEventMessage}
-          doButtonAction={this.doButtonAction} />
+          doButtonAction={this.doButtonAction}
+          btnDisabled={this.state.btnDisabled} />
       </div>
     );
   }
