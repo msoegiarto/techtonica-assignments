@@ -2,6 +2,8 @@
 
 made for [eventonica-react](https://github.com/Techtonica/curriculum/blob/master/projects/eventonica-react.md) assignment and [react assessment](https://github.com/Techtonica/curriculum/blob/master/projects/react-assessment.md) 
 
+click here for [live](https://msoegiarto-eventonica.herokuapp.com) site
+
 # Build with
 
 [ElephantSQL](https://www.elephantsql.com/)
