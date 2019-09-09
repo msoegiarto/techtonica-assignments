@@ -39,7 +39,7 @@ class ViewEventsTable extends Component {
       const title = this.state.events[arrayIndex].title;
 
       axios
-        .get(`http://localhost:5000/api/eventonica/events/${id}/users`)
+        .get(`/api/eventonica/events/${id}/users`)
         .then(res => {
           this.setState({
             modalTitle: title,
@@ -63,7 +63,7 @@ class ViewEventsTable extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/eventonica/events`)
+      .get(`/api/eventonica/events`)
       .then(res => {
         this.setState({
           events: res.data

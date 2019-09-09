@@ -174,12 +174,12 @@ const searchEventfulApi = (keywords, callbackFn) => {
     location: 'San Francisco',
     date: 'Next Week'
   }, function (err, data) {
-    if (err) console.error(err);
+    if (err || data.error) console.error(err, data.error);
 
     const searchResults = data.search.events.event;
-    if (searchResults) {
-      const resultEvent = [];
 
+    if (searchResults && Array.isArray(searchResults)) {
+      const resultEvent = [];
       for (let i = 0; i < searchResults.length; i++) {
         const simplifiedSearchResult = {
           title: searchResults[i].title,
@@ -189,8 +189,19 @@ const searchEventfulApi = (keywords, callbackFn) => {
         }
         resultEvent.push(simplifiedSearchResult);
       }
-
       callbackFn(resultEvent);
+
+    } else if (searchResults && !Array.isArray(searchResults)) {
+      // if the results of the search only consists of 1 item
+      // evenful will send a dictionary instead of an array
+      const simplifiedSearchResult = [{
+        title: searchResults.title,
+        start_time: searchResults.start_time,
+        venue_name: searchResults.venue_name,
+        venue_address: searchResults.venue_address
+      }];
+      callbackFn(simplifiedSearchResult);
+
     } else {
       callbackFn({ message: 'There is no such event next week' });
     }

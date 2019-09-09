@@ -46,12 +46,12 @@ class MatchUser extends Component {
     });
 
     axios
-      .get(`http://localhost:5000/api/eventonica/users/${this.state.userid}`)
+      .get(`/api/eventonica/users/${this.state.userid}`)
       .then(user => {
         this.setState({ username: user.data.username });
 
         axios
-          .get(`http://localhost:5000/api/eventonica/events`)
+          .get(`/api/eventonica/events`)
           .then(res => {
             const results = [res];
 
@@ -62,7 +62,7 @@ class MatchUser extends Component {
             } else {
 
               axios
-                .get(`http://localhost:5000/api/eventonica/users/${this.state.userid}/events`)
+                .get(`/api/eventonica/users/${this.state.userid}/events`)
                 .then(res2 => {
                   const results2 = [res2];
 
@@ -112,7 +112,7 @@ class MatchUser extends Component {
     const data = { title: this.state.searchResults[param.index].title };
 
     axios
-      .post(`http://localhost:5000/api/eventonica/users/${this.state.userid}/events`, data)
+      .post(`/api/eventonica/users/${this.state.userid}/events`, data)
       .then(res => {
 
         if (res.data.msg) {

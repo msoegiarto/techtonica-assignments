@@ -41,7 +41,7 @@ class SearchEvents extends Component {
     };
 
     axios
-      .get(`http://localhost:5000/api/eventonica/events/search`, data)
+      .get(`/api/eventonica/events/search`, data)
       .then(res => {
         const results = [res];
 
@@ -75,7 +75,7 @@ class SearchEvents extends Component {
     this.toggleBtnDisabled();
 
     axios
-      .post(`http://localhost:5000/api/eventonica/events/`, this.state.searchResults[param.index])
+      .post(`/api/eventonica/events/`, this.state.searchResults[param.index])
       .then(res => {
         console.log(res);
         if (res.data.msg) {

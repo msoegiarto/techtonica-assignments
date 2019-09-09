@@ -29,7 +29,7 @@ class ViewUsers extends Component {
     });
 
     axios
-      .delete(`http://localhost:5000/api/eventonica/users/${id}`)
+      .delete(`/api/eventonica/users/${id}`)
       .then(res => {
         if (res.data.msg) {
           this.setState({
@@ -56,7 +56,7 @@ class ViewUsers extends Component {
     });
 
     axios
-      .post(`http://localhost:5000/api/eventonica/users`, { username: username })
+      .post(`/api/eventonica/users`, { username: username })
       .then(res => {
 
         if (res.data.msg) {
@@ -77,7 +77,7 @@ class ViewUsers extends Component {
 
   getAllUsers() {
     axios
-      .get(`http://localhost:5000/api/eventonica/users`)
+      .get(`/api/eventonica/users`)
       .then(res => {
         this.setState({
           users: res.data
@@ -90,7 +90,7 @@ class ViewUsers extends Component {
 
   getSingleUserEvents(id) {
     axios
-      .get(`http://localhost:5000/api/eventonica/users/${id}/events`)
+      .get(`/api/eventonica/users/${id}/events`)
       .then(res => {
         this.setState({
           userEvents: res.data

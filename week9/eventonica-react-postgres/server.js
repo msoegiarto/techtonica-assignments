@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mountRoutes = require('./routes/index');
@@ -20,7 +21,7 @@ app.use((req, res, next) => {
 mountRoutes(app);
 
 app.get('*', (req, res) => {
-  res.json({ msg: 'Welcome to Eventonica.' })
+  res.json({ msg: 'Welcome to Eventonica.'})
 });
 
 const PORT = process.env.PORT || 5000;

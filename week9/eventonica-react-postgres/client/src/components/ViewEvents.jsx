@@ -24,7 +24,7 @@ class ViewEvents extends Component {
     });
 
     axios
-      .delete(`http://localhost:5000/api/eventonica/events/${id}`)
+      .delete(`/api/eventonica/events/${id}`)
       .then(res => {
         if (res.data.msg) {
           this.setState({
