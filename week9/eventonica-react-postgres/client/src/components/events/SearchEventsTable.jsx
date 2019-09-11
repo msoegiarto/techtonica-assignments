@@ -42,10 +42,10 @@ class SearchEventsTable extends Component {
                   <thead>
                     <tr>
                       <th style={{ width: '10%' }}>#</th>
-                      <th style={{ width: '25%' }}>Title</th>
+                      <th style={{ width: '30%' }}>Title</th>
                       <th style={{ width: '15%' }}>Date</th>
                       <th style={{ width: '20%' }}>Venue Name</th>
-                      <th style={{ width: '25%' }}>Address</th>
+                      <th style={{ width: '20%' }}>Address</th>
                       <th style={{ width: '5%' }}></th>
                     </tr>
                   </thead>

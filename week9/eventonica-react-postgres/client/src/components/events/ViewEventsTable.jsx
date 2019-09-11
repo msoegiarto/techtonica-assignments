@@ -88,12 +88,12 @@ class ViewEventsTable extends Component {
                   <thead>
                     <tr>
                       <th style={{ width: '10%' }}>#</th>
-                      <th style={{ width: '20%' }}>Title</th>
+                      <th style={{ width: '24%' }}>Title</th>
                       <th style={{ width: '15%' }}>Date</th>
                       <th style={{ width: '15%' }}>Venue Name</th>
-                      <th style={{ width: '20%' }}>Address</th>
+                      <th style={{ width: '15%' }}>Address</th>
                       <th style={{ width: '5%' }}></th>
-                      <th style={{ width: '15%' }}></th>
+                      <th style={{ width: '16%' }}></th>
                     </tr>
                   </thead>
                   <tbody>
