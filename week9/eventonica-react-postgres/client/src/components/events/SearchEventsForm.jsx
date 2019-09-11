@@ -9,7 +9,8 @@ import {
   FormGroup,
   Label,
   Input,
-  Button
+  Button,
+  Spinner
 } from 'reactstrap';
 
 class SearchEventsForm extends Component {
@@ -45,7 +46,8 @@ class SearchEventsForm extends Component {
                       value={this.state.keywords} />
                   </Col>
                   <Col sm={2}>
-                    <Button color="primary" disabled={this.props.btnDisabled}>Search</Button>
+                    <Button color="primary" disabled={this.props.btnDisabled}>Search</Button>&nbsp;
+                    {this.props.btnDisabled ? <Spinner size="sm" color="secondary" /> : ''}
                   </Col>
                 </FormGroup>
               </Form>
