@@ -41,12 +41,12 @@ class SearchEventsTable extends Component {
                 <Table striped>
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>Title</th>
-                      <th>Date</th>
-                      <th>Venue Name</th>
-                      <th>Address</th>
-                      <th></th>
+                      <th style={{ width: '10%' }}>#</th>
+                      <th style={{ width: '25%' }}>Title</th>
+                      <th style={{ width: '15%' }}>Date</th>
+                      <th style={{ width: '20%' }}>Venue Name</th>
+                      <th style={{ width: '25%' }}>Address</th>
+                      <th style={{ width: '5%' }}></th>
                     </tr>
                   </thead>
                   <tbody>
