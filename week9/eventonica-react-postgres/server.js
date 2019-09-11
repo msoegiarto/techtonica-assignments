@@ -1,24 +1,22 @@
 require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const mountRoutes = require('./routes/index');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-// middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-//Static file declaration
-app.use(express.static(path.join(__dirname, 'client/build')));
+// support parsing of application/json type post data
+app.use(express.json());
+// parsing the URL-encoded data with the querystring library (when false) or the qs library (when true)
+app.use(express.urlencoded({ extended: true })); 
 
 // routes
 mountRoutes(app);
 
 // production mode
 if (process.env.NODE_ENV === 'production') {
+  //Static file declaration
   app.use(express.static(path.join(__dirname, 'client/build')));
   //build mode 
   app.get('*', (req, res) => { res.sendfile(path.join(__dirname = 'client/build/index.html')); })
