@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import EventfulSearch from './components/EventfulSearch.js';
 import SearchEvents from './components/SearchEvents.jsx';
 import ViewEvents from './components/ViewEvents.jsx';
 import ViewUsers from './components/ViewUsers.jsx';
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Route exact path='/' component={SearchEvents} />
+        <Route exact path='/eventful' component={EventfulSearch} />
         <Route exact path='/view' component={ViewEvents} />
         <Route exact path='/user' component={ViewUsers} />
         <Route exact path='/match/:userid' component={MatchUser} />
