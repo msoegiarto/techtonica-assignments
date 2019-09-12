@@ -51,7 +51,7 @@ class SearchEventsTable extends Component {
                   </thead>
                   <tbody>
                     {searchResults.map(({ id, title, start_time, venue_name, venue_address }, index) => (
-                      <tr key={index} id={id} label={index}>
+                      <tr key={id} id={id} label={index}>
                         <td>{index + 1}</td>
                         <td>{title}</td>
                         <td>{start_time}</td>

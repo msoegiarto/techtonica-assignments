@@ -98,7 +98,7 @@ class ViewEventsTable extends Component {
                   </thead>
                   <tbody>
                     {events.map(({ id, title, start_time, venue_name, venue_address }, index) => (
-                      <tr key={index} label={index} id={id}>
+                      <tr key={id} label={index} id={id}>
                         <td>{index + 1}</td>
                         <td>{title}</td>
                         <td>{start_time}</td>
@@ -125,8 +125,8 @@ class ViewEventsTable extends Component {
                   <ModalBody>
                     <ul>
                       {
-                        this.state.attendees.map((user, index) => (
-                          <li key={index}>{user.username}</li>
+                        this.state.attendees.map(user => (
+                          <li key={user.id}>{user.username}</li>
                         ))
                       }
                     </ul>

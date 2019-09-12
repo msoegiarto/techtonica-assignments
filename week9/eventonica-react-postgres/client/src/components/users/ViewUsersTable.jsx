@@ -81,7 +81,7 @@ class ViewUsersTable extends Component {
                   </thead>
                   <tbody>
                     {users.map(({ id, username }, index) => (
-                      <tr key={index} label={index} id={id}>
+                      <tr key={id} label={index} id={id}>
                         <td>{index + 1}</td>
                         <td>{username}</td>
                         <td>
@@ -122,7 +122,7 @@ class ViewUsersTable extends Component {
                       <tbody>
                         {
                           this.props.userEvents.map(({ id, title, start_time, venue_name, venue_address }, index) => (
-                            <tr key={index} label={index} id={id}>
+                            <tr key={id} label={index} id={id}>
                               <td>{index + 1}</td>
                               <td>{title}</td>
                               <td>{start_time}</td>
