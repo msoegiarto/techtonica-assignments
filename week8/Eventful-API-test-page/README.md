@@ -29,7 +29,7 @@ Create a table called `"Users-Events"`
 
     CREATE TABLE "Users-Events" (
       id SERIAL PRIMARY KEY,
-      user_id INT REFERENCES "Users" (id) ON DELETE SET NULL
+      user_id INT REFERENCES "Users" (id) ON DELETE SET NULL,
       event_id INT REFERENCES "Events" (id) ON DELETE SET NULL,
     );
 
