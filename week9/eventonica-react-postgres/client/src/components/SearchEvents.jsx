@@ -54,7 +54,6 @@ class SearchEvents extends Component {
             searchResults: results[0].data
           });
         }
-        console.log('searchResults=', this.state.searchResults);
 
       })
       .catch(err => {

@@ -174,7 +174,8 @@ const searchEventfulApi = (keywords, callbackFn) => {
     location: 'San Francisco',
     date: 'Next Week'
   }, function (err, data) {
-    if (err || data.error) console.error(err, data.error);
+    if (err) console.error(err);
+    if (data && data.error) console.error(data.error);
 
     const searchResults = data.search.events.event;
 
@@ -182,6 +183,7 @@ const searchEventfulApi = (keywords, callbackFn) => {
       const resultEvent = [];
       for (let i = 0; i < searchResults.length; i++) {
         const simplifiedSearchResult = {
+          id: searchResults[i]['$'].id,
           title: searchResults[i].title,
           start_time: searchResults[i].start_time,
           venue_name: searchResults[i].venue_name,
@@ -195,6 +197,7 @@ const searchEventfulApi = (keywords, callbackFn) => {
       // if the results of the search only consists of 1 item
       // evenful will send a dictionary instead of an array
       const simplifiedSearchResult = [{
+        id: searchResults['$'].id,
         title: searchResults.title,
         start_time: searchResults.start_time,
         venue_name: searchResults.venue_name,
