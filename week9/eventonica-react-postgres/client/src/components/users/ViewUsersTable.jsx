@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import {
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
+  Card, CardBody, CardTitle,
+  Row, Col,
   Table,
   Button,
   Modal, ModalHeader, ModalBody, ModalFooter
@@ -64,7 +61,7 @@ class ViewUsersTable extends Component {
 
     if (users.length > 0) {
       return (
-        <Row className="mt-5">
+        <Row className="mt-5 mb-5">
           <Col sm={{ size: 10, offset: 1 }} >
             <Card>
               <CardBody>

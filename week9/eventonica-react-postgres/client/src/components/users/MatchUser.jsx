@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  Row,
-  Col
+  Card, CardBody, CardTitle, CardText,
+  Row, Col
 } from 'reactstrap';
 
 import AppNavbar from '../shared/AppNavbar.jsx';

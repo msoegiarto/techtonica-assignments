@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
+  Card, CardBody, CardTitle,
+  Row, Col,
+  Form, FormGroup, Label, Input,
   Button,
   Spinner
 } from 'reactstrap';

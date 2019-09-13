@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
+  Card, CardBody, CardTitle,
+  Row, Col,
   Table,
   Button,
   Modal, ModalHeader, ModalBody, ModalFooter
@@ -79,7 +76,7 @@ class ViewEventsTable extends Component {
 
     if (events.length > 0) {
       return (
-        <Row className="mt-5">
+        <Row className="mt-5 mb-5">
           <Col sm={{ size: 10, offset: 1 }} >
             <Card>
               <CardBody>

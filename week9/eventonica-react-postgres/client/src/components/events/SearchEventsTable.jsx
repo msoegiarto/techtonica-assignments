@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import {
-  Card,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
+  Card, CardBody, CardTitle,
+  Row, Col,
   Table,
   Button
 } from 'reactstrap';
@@ -33,7 +30,7 @@ class SearchEventsTable extends Component {
 
     if (searchResults.length > 0) {
       return (
-        <Row>
+        <Row className="mb-5">
           <Col sm={{ size: 10, offset: 1 }} >
             <Card>
               <CardBody>
