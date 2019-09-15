@@ -62,6 +62,7 @@ class MatchUser extends Component {
                 .then(res2 => {
                   const results2 = [res2];
 
+                  // only displaying events that has not been matched before
                   const result = results[0].data.filter(function (item) {
                     for (let i = 0; i < results2[0].data.length; i++) {
                       if (results2[0].data[i].id === item.id) {
