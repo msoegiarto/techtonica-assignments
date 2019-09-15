@@ -28,6 +28,54 @@ click here for [live](https://msoegiarto-eventonica.herokuapp.com) site
 
 ![](./readme_imgs/ERD_eventonica.png)
 
+# Install
+
+1. Fork and clone the repo
+
+2. Go to the `eventonica-react` folder
+
+2. Install dependencies by running `npm install` and `npm run client-install`
+
+3. Create a file called `.env`. It should contain:
+
+        PGHOST=<your_db_host>
+        PGPORT=<your_db_port>
+        PGNAME=<your_db_name>
+        PGUSER=<your_db_user>
+        PGPASS=<your_db_password>
+        EVENTFUL_API_KEY=<your_eventful_api_key>
+
+4. Database (PostgresSQL)
+
+   Create a table called `"Users"`, `"Events"` and `"Users-Events"`
+
+        CREATE TABLE "Users" (
+            id SERIAL PRIMARY KEY,
+            username VARCHAR(50) UNIQUE NOT NULL
+        );
+
+        CREATE TABLE "Events" (
+            id SERIAL PRIMARY KEY,
+            title VARCHAR(255) UNIQUE NOT NULL,
+            start_time TIMESTAMPTZ,
+            venue_name VARCHAR(255),
+            venue_address VARCHAR(255)
+        );
+
+        CREATE TABLE "Users-Events" (
+            id SERIAL PRIMARY KEY,
+            user_id INT REFERENCES "Users" (id) ON DELETE SET NULL,
+            event_id INT REFERENCES "Events" (id) ON DELETE SET NULL
+        );
+
+5. Start the application locally
+
+   Run `npm run server` to start only the server at `localhost:5000`
+
+   Run `npm run client` to start only the client at `localhost:3000`
+
+   Run `npm run dev` to run both concurrently
+
 # Screenshots
 
 1. Home (Search events page)
