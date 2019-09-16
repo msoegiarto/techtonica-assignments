@@ -1,16 +1,23 @@
 const { Pool } = require('pg');
 
-// const pool = new Pool({
-//   user: process.env.PGUSER,
-//   host: process.env.PGHOST,
-//   database: process.env.PGUSER,
-//   password: process.env.PGPASS,
-//   port: process.env.PGPORT
-// });
+const user = process.env.PGUSER;
+const host = process.env.PGHOST;
+const database = process.env.PGNAME;
+const password = process.env.PGPASS;
+const port = process.env.PGPORT;
+
+if (!user) throw "PGUSER env variable not found";
+if (!host) throw "PGHOST env variable not found";
+if (!database) throw "PGNAME env variable not found";
+if (!password) throw "PGPASS env variable not found";
+if (!port) throw "PGPORT env variable not found";
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
+  user,
+  host,
+  database,
+  password,
+  port
 });
 
 module.exports = {
