@@ -12,6 +12,14 @@ if (!database) throw "PGNAME env variable not found";
 if (!password) throw "PGPASS env variable not found";
 if (!port) throw "PGPORT env variable not found";
 
+// using url
+// const databaseUrl = process.env.DATABASE_URL;
+// if(!databaseUrl) throw "DATABASE_URL env variable not found";
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: true
+// });
+
 const pool = new Pool({
   user,
   host,
