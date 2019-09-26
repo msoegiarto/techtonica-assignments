@@ -76,7 +76,69 @@ click here for [live](https://msoegiarto-eventonica.herokuapp.com) site
 
    Run `npm run dev` to run both concurrently
 
-# Screenshots
+# Server Endpoints
+
+__Users__
+
+1. display all users
+
+   `GET /api/eventonica/users`
+   
+2. display a single user
+
+   `GET /api/eventonica/users/:id`
+   
+3. display all events saved by a single user
+
+   `GET /api/eventonica/users/:id/events`
+   
+4. save a user
+
+   `POST /api/eventonica/users/`
+   
+5. save an event for a single user
+
+   `POST /api/eventonica/users/:id/events`
+
+6. update a user
+
+   `PUT /api/eventonica/users/`
+   
+7. delete a user
+
+   `DELETE /api/eventonica/users/`
+   
+__Events__
+   
+1. search events using eventful-api
+
+   `GET /api/eventonica/events/search?keywords=:keywords`
+
+2. display all events
+
+   `GET /api/eventonica/events`
+
+3. display a single event
+
+   `GET /api/eventonica/events/:id`
+   
+4. display all attendees of a single event
+
+   `GET /api/eventonica/events/:id/users`
+   
+5. save an event
+
+   `POST /api/eventonica/events/`
+   
+6. update an event
+
+   `PUT /api/eventonica/events/`
+   
+7. delete an event
+
+   `DELETE /api/eventonica/events/`
+   
+# Client Screenshots
 
 1. Home (Search events page)
 
