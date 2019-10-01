@@ -304,7 +304,6 @@ Table of contents:
 
           rows.forEach(row => {
             totalPermit += parseInt(row["Permit Counter"]);
-            console.log('totalPermit:', totalPermit);
           });
 
           res.send({ totalPermit, companies: rows });
