@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../css/menu.css">
+  <link rel="stylesheet" type="text/css" href="../css/myCss2.css">
+  <title>Carousel</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-start mt-2">
+
+      <div class="col-sm-2 align-self-left">
+        <ul id="menu-prev">
+          <li><a href="../index.html">Prev page</a>
+        </ul>
+      </div>
+
+      <div class="col-sm-8 align-self-center">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title text-center">Carousel without Bootstrap</h3>
+
+            <ul class="slides">
+              <input type="radio" name="radio-buttons" id="img-1" checked />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="http://www.bhmpics.com/wallpapers/doraemon-800x600.jpg" />
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-3" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-2" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-2" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img
+                    src="http://digitalimagemakerworld.com/images/doraemon-wallpaper/36119496-doraemon-wallpaper.jpg">
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-1" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-3" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-3" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="https://static.zerochan.net/Doraemon.full.50786.jpg">
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-2" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-4" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-4" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img src="http://avante.biz/wp-content/uploads/Doremon-Wallpapers/Doremon-Wallpapers-005.jpg">
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-3" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-5" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <input type="radio" name="radio-buttons" id="img-5" />
+              <li class="slide-container">
+                <div class="slide-image">
+                  <img
+                    src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-qkvy28_b0d936ca.jpeg?region=0%2C0%2C800%2C600">
+                </div>
+                <div class="carousel-controls">
+                  <label for="img-4" class="prev-slide">
+                    <span>&lsaquo;</span>
+                  </label>
+                  <label for="img-1" class="next-slide">
+                    <span>&rsaquo;</span>
+                  </label>
+                </div>
+              </li>
+              <div class="carousel-dots">
+                <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                <label for="img-4" class="carousel-dot" id="img-dot-4"></label>
+                <label for="img-5" class="carousel-dot" id="img-dot-5"></label>
+              </div>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
