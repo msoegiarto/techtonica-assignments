@@ -1,6 +1,6 @@
 # Backend take home exercise
 
-here is the [link](ttps://github.com/Techtonica/curriculum/blob/master/projects/take-home-problems/backend.md) to the assignment page
+here is the [link](https://github.com/Techtonica/curriculum/blob/master/projects/take-home-problems/backend.md) to the assignment page
 
 Table of contents:
 
