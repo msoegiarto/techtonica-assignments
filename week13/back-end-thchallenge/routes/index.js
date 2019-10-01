@@ -20,8 +20,7 @@ router.get('/api/report/properties/search', (req, res, next) => {
     `SELECT * FROM (
       SELECT ROW_NUMBER() OVER () rownum, b.* FROM (
         SELECT DISTINCT
-          a."Street Number", a."Street", 
-          a."Street Suffix", a."State", a."Zipcode"
+          c."Address", c."Zipcode",  c."Violation Item Description"
         FROM contacts AS a 
         INNER JOIN permits AS b ON a."Permit Number" = b."Permit Number"
         INNER JOIN fire_violations AS c ON b."Location" = c."Location"
