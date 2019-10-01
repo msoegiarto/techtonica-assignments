@@ -41,7 +41,13 @@ Table of contents:
     "http://localhost:3001/api/report/properties/search?companyName=Mcclure%20Electric%20Inc&page=1"
 
     curl -X GET \
-    "http://localhost:3001/api/report/properties/search?companyName=Mcclure%20Electric%20Inc"
+    "http://localhost:3001/api/report/properties/search?companyName=North%20Construction%20Service%20Inc&page=1"
+
+    curl -X GET \
+    "http://localhost:3001/api/report/properties/search?companyName=Hp%20Communications%20Inc"
+
+    curl -X GET \
+    "http://localhost:3001/api/report/properties/search?companyName=Rod%20Muscio%20Electrical"
     ```
     
 2.  Search the contact of all the contractors working in a given block on a given date
