@@ -247,9 +247,7 @@ Table of contents:
 
 
     router.get('/api/report/properties/search', (req, res, next) => {
-      // console.log(req.query);
       let { companyName, page } = req.query;
-      console.log('companyName:', companyName, '|| page:', page);
 
       page = page || DEFAULT_PAGE;
       const paginationStart = (page - 1) * DATA_PER_PAGE;
@@ -283,7 +281,6 @@ Table of contents:
 
     router.get('/api/report/contractor/search', (req, res, next) => {
       let { block, date } = req.query;
-      console.log('block:', block, '|| date:', date);
 
       db.all(`
         SELECT count( DISTINCT a."Permit Number") as "Permit Counter",  
