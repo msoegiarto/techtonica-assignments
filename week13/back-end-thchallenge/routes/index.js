@@ -69,7 +69,6 @@ router.get('/api/report/contractor/search', (req, res, next) => {
 
       rows.forEach(row => {
         totalPermit += parseInt(row["Permit Counter"]);
-        console.log('totalPermit:', totalPermit);
       });
 
       res.send({ totalPermit, companies: rows });
