@@ -1,4 +1,6 @@
-link to assignment: https://github.com/Techtonica/curriculum/blob/master/projects/take-home-problems/frontend.md
+here is the [link](https://github.com/Techtonica/curriculum/blob/master/projects/take-home-problems/frontend.md) to the assignment
+
+here is the [link](https://msoegiarto.github.io/techtonica-assignments/index.html) for the github page
 
 1. index.html
 
