@@ -177,7 +177,7 @@ Table of contents:
     const sqlite3 = require('sqlite3').verbose();
     const Promise = require('bluebird');
 
-    const dbFilePath = './backend-challenge.sqlite3';
+    const dbFilePath = './backend-challenge.sqlite3'; //this will be the path and name of the physical db file
 
     class AppDAO {
       constructor() {
