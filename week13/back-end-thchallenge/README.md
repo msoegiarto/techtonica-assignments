@@ -8,9 +8,9 @@ Table of contents:
 
 2. [Endpoints](#endpoints)
 
-3. [How I built this](#tutorial)
+3. [How I built this](#how-i-built-this)
 
-## Install {#install}
+## Install
 
 1. fork and clone the repo
 
@@ -20,9 +20,9 @@ Table of contents:
 
 4. run `npm start` to start the server
 
-5. in order to properly run the program, populate the data by following [step 2 - 8](#tutorial)
+5. in order to properly run the program, populate the data by following [step 2 - 8](#how-i-built-this)
 
-## Endpoints {#endpoints}
+## Endpoints
 
 1.  Search the addresses a contractor have worked on, limit 10 data per page
 
@@ -61,7 +61,7 @@ Table of contents:
     "http://localhost:3001/api/report/contractor/search?block=3723&date=2018-01-01"
     ```
 
-## How I built this {#tutorial}
+## How I built this
 
 1.  create a root folder, eg. `back-end-challenge` and go inside the folder
 
